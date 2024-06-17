@@ -15,6 +15,7 @@ import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import { getPage } from "../../lib/get-page";
 
+
 export async function generateMetadata({
   params: { puckPath = [] },
 }: {
@@ -40,9 +41,9 @@ export default async function Page({
   }
 
   return <>
-  <div>Umashankar Pardhi</div>
+  
   <Client data={data} />
-  <div>Umashankar Pardhi</div></>;
+ </>;
 }
 
 // Force Next.js to produce static pages: https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamic
