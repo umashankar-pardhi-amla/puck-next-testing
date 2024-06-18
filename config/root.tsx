@@ -1,8 +1,9 @@
 import { ReactNode } from "react";
 
-import { DefaultRootProps } from "@/core";
+
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
+import { DefaultRootProps } from "@measured/puck";
 
 export type RootProps = {
   children: ReactNode;

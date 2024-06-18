@@ -83,7 +83,7 @@ const Footer = ({ children }: { children: ReactNode }) => {
         <a
           href="https://measured.co"
           target="_blank"
-          style={{ color: "inherit", textDecoration: "none", fontWeight: 600 }}
+          style={{ color: "inherit", textDecoration: "none", fontWeight: 600 }} rel="noreferrer"
         >
           Measured
         </a>
