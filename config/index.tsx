@@ -14,6 +14,7 @@ import Root, { RootProps } from "./root";
 import { Config, Data } from "@measured/puck";
 import { HeadingProps,Heading } from "./blocks/Heading";
 import { ProductList, ProductListProps } from "./blocks/ProductList";
+import { WidgetProps,Widget } from "./blocks/Widgets";
 
 export type { RootProps } from "./root";
 
@@ -29,6 +30,7 @@ export type Props = {
   Text: TextProps;
   VerticalSpace: VerticalSpaceProps;
   ProductList:ProductListProps
+  Widget:WidgetProps
 };
 
 export type UserConfig = Config<
@@ -68,7 +70,8 @@ export const conf: UserConfig = {
     Stats,
     Text,
     VerticalSpace,
-    ProductList
+    ProductList,
+    Widget
   },
 };
 

@@ -52,10 +52,7 @@ const ProductListComponent = ({ products }) => {
 
 export const ProductList: ComponentConfig<ProductListProps> =  {
   fields: {
-    title: {
-      type: "text",
-    },
-    
+
     data: {
       type: "external",
       fetchList: async () => {
