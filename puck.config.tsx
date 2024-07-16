@@ -97,7 +97,7 @@ export const config: Config<Props> = {
       },
       render: ({ data }:any) => {
         if (!data) {
-          return "No data selected";
+          return "No data selected" as any;
         }
  
         return (

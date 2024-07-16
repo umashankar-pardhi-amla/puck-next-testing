@@ -6,6 +6,9 @@ import styles from "./styles.module.css";
 import { Section } from "../../components/Section";
 import getClassNameFactory from "../../../lib/get-class-name-factory";
 import { ComponentConfig } from "@measured/puck";
+import Counter from "../../components/Counter";
+import ProductList from "../../components/ProductList";
+
 
 const getClassName = getClassNameFactory("Logos", styles);
 
@@ -64,6 +67,11 @@ export const Logos: ComponentConfig<LogosProps> = {
     return (
       <Section className={getClassName()}>
         <div className={getClassName("items")}>
+          sdfasdf
+          sdfasdkfasdf
+          <strong>Testing Title </strong>
+          <Counter></Counter>
+          <ProductList></ProductList>
           {logos.map((item, i) => (
             <div key={i} className={getClassName("item")}>
               <img

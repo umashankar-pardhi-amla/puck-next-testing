@@ -66,6 +66,7 @@ export const ButtonGroup: ComponentConfig<ButtonGroupProps> = {
           ))}
         </div>
       </Section>
+
     );
   },
 };

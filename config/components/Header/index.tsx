@@ -6,7 +6,7 @@ import styles from "./styles.module.css";
 const getClassName = getClassNameFactory("Header", styles);
 
 const NavItem = ({ label, href }: { label: string; href: string }) => {
-  const navPath = window.location.pathname.replace("/edit", "") || "/";
+  const navPath = window?window.location.pathname.replace("/edit", "") || "/":"/";
 
   const isActive = navPath === (href.replace("/edit", "") || "/");
 

@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { useState } from "react";
+import React from "react";
 
 import styles from "./styles.module.css";
 
@@ -7,6 +7,7 @@ import { Section } from "../../components/Section";
 import { quotes } from "./quotes";
 import getClassNameFactory from "../../../lib/get-class-name-factory";
 import { Button, ComponentConfig } from "@measured/puck";
+import HeroSection from "../../components/Hero";
 
 const getClassName = getClassNameFactory("Hero", styles);
 
@@ -175,68 +176,13 @@ export const Hero: ComponentConfig<HeroProps> = {
 
     return fields;
   },
-  render: ({ align, title, description, buttons, padding, image, puck }) => {
+  render: (props) => {
     // Empty state allows us to test that components support hooks
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    const [_] = useState(0);
+   
 
     return (
-      <Section
-        padding={padding}
-        className={getClassName({
-          left: align === "left",
-          center: align === "center",
-          hasImageBackground: image?.mode === "background",
-        })}
-      >
-        {image?.mode === "background" && (
-          <>
-            <div
-              className={getClassName("image")}
-              style={{
-                backgroundImage: `url("${image?.url}")`,
-              }}
-            ></div>
-
-            <div className={getClassName("imageOverlay")}></div>
-          </>
-        )}
-
-        <div className={getClassName("inner")}>
-          <div className={getClassName("content")}>
-            <h1>{title}</h1>
-            <p className={getClassName("subtitle")}>{description}</p>
-            <div className={getClassName("actions")}>
-              {buttons.map((button, i) => (
-                <Button
-                  key={i}
-                  href={button.href}
-                  variant={button.variant}
-                  size="large"
-                  tabIndex={puck.isEditing ? -1 : undefined}
-                >
-                  {button.label}
-                </Button>
-              ))}
-            </div>
-          </div>
-
-          {align !== "center" && image?.mode !== "background" && image?.url && (
-            <div
-              style={{
-                backgroundImage: `url('${image?.url}')`,
-                backgroundSize: "cover",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-                borderRadius: 24,
-                height: 356,
-                marginLeft: "auto",
-                width: "100%",
-              }}
-            />
-          )}
-        </div>
-      </Section>
+      <HeroSection {...props as any } getClassName={getClassName}></HeroSection>
     );
   },
 };

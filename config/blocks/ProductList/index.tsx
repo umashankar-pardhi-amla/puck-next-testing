@@ -94,7 +94,7 @@ export const ProductList: ComponentConfig<ProductListProps> =  {
    
 
     if (!data) {
-      return "No data selected";
+      return "No data selected" as any;
     }
 
     return (
